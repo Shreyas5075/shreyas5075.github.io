@@ -54,7 +54,7 @@ export default function About() {
             className="space-y-5"
           >
             <p className="text-text-secondary leading-relaxed">
-              My path into data science started with a fascination for patterns — in code, in data, and in the visual world around me. I completed my{' '}
+              My path into data science started with a fascination for patterns - in code, in data, and in the visual world around me. I completed my{' '}
               <span className="text-text-primary font-medium">
                 BTech in Computer Science (AI & Analytics)
               </span>{' '}
@@ -82,7 +82,7 @@ export default function About() {
               <span className="text-brand-indigo font-medium">
                 visual storytelling
               </span>
-              . As an automotive photographer, I've learned to see the world through a cinematic lens — a perspective that informs how I design data visualizations, craft user interfaces, and communicate complex research to non-technical stakeholders.
+              . As an automotive photographer, I've learned to see the world through a cinematic lens - a perspective that informs how I design data visualizations, craft user interfaces, and communicate complex research to non-technical stakeholders.
             </p>
           </motion.div>
 
