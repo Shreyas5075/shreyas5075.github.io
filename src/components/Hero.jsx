@@ -160,7 +160,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6"
         >
-          <span className="gradient-text">Shreyas</span>
+          <span className="gradient-text">Shreyas Ghag</span>
         </motion.h1>
 
         {/* Animated underline accent */}

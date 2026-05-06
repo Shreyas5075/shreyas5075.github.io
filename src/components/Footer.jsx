@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Left */}
         <p className="text-xs text-text-muted flex items-center gap-1">
-          © {new Date().getFullYear()} Shreyas. Built with{' '}
+          © {new Date().getFullYear()} Shreyas Ghag. Built with{' '}
           <HiOutlineHeart className="text-red-400 inline" /> and React.
         </p>
 
