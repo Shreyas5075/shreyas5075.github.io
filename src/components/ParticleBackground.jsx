@@ -120,6 +120,12 @@ export default function ParticleBackground() {
     };
   }, []);
 
+  // On mobile, don't render the canvas at all to ensure perfect scrolling performance
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <canvas
       ref={canvasRef}
