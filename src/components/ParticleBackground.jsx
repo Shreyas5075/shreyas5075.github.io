@@ -31,8 +31,11 @@ export default function ParticleBackground() {
     };
     window.addEventListener('mousemove', handleMouse);
 
-    // Create particles
-    const PARTICLE_COUNT = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 160);
+    // Create particles - much fewer on mobile
+    const isMobile = window.innerWidth < 768;
+    const maxParticles = isMobile ? 25 : 120; // Drastic reduction for mobile
+    const PARTICLE_COUNT = Math.min(Math.floor((canvas.width * canvas.height) / 18000), maxParticles);
+    
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -84,20 +87,22 @@ export default function ParticleBackground() {
         ctx.fillStyle = `rgba(59, 130, 246, ${drawOpacity})`;
         ctx.fill();
 
-        // Draw connections to nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const cdx = p.x - p2.x;
-          const cdy = p.y - p2.y;
-          const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
-          if (cdist < CONNECTION_DIST) {
-            const lineOpacity = (1 - cdist / CONNECTION_DIST) * 0.08;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(99, 140, 248, ${lineOpacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
+        // Draw connections to nearby particles - DISABLE on mobile for performance
+        if (!isMobile) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const cdx = p.x - p2.x;
+            const cdy = p.y - p2.y;
+            const cdist = Math.sqrt(cdx * cdx + cdy * cdy);
+            if (cdist < CONNECTION_DIST) {
+              const lineOpacity = (1 - cdist / CONNECTION_DIST) * 0.08;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(99, 140, 248, ${lineOpacity})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
           }
         }
       });

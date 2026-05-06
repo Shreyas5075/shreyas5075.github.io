@@ -4,12 +4,12 @@ import { SiInstagram } from 'react-icons/si';
 import { HiOutlineCamera as CameraIcon } from 'react-icons/hi';
 
 const photos = [
-  { src: '/photos/auto1.jpeg', alt: 'Luxury sports car night shot', span: 'tall' },
-  { src: '/photos/auto2.jpeg', alt: 'Classic muscle car in the city', span: 'normal' },
-  { src: '/photos/auto3.jpeg', alt: 'Supercar headlight detail', span: 'normal' },
-  { src: '/photos/auto4.jpeg', alt: 'Sports car aerial city view', span: 'tall' },
-  { src: '/photos/auto5.jpeg', alt: 'Performance car rolling shot', span: 'normal' },
-  { src: '/photos/auto6.jpeg', alt: 'Supercar in underground garage', span: 'normal' },
+  { src: '/photos/auto1.webp', alt: 'Luxury sports car night shot', span: 'tall' },
+  { src: '/photos/auto2.webp', alt: 'Classic muscle car in the city', span: 'normal' },
+  { src: '/photos/auto3.webp', alt: 'Supercar headlight detail', span: 'normal' },
+  { src: '/photos/auto4.webp', alt: 'Sports car aerial city view', span: 'tall' },
+  { src: '/photos/auto5.webp', alt: 'Performance car rolling shot', span: 'normal' },
+  { src: '/photos/auto6.webp', alt: 'Supercar in underground garage', span: 'normal' },
 ];
 
 const stats = [
