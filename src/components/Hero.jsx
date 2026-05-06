@@ -25,7 +25,7 @@ const rings = [
 export default function Hero() {
   return (
     <section
-      id="about"
+      id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* ===== BACKGROUND LAYERS ===== */}
@@ -269,7 +269,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <Link
-          to="skills"
+          to="about"
           smooth={true}
           duration={600}
           offset={-64}

@@ -5,9 +5,9 @@ import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
 const navLinks = [
   { to: 'about', label: 'About' },
-  { to: 'skills', label: 'Skills' },
+  { to: 'skills', label: 'Tech Stack' },
   { to: 'projects', label: 'Projects' },
-  { to: 'gallery', label: 'Gallery' },
+  { to: 'gallery', label: 'Photography' },
   { to: 'education', label: 'Education' },
   { to: 'contact', label: 'Contact' },
 ];

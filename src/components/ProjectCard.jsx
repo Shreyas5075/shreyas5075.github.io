@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { HiOutlineExternalLink, HiOutlineDocumentText } from 'react-icons/hi';
 
 const techColors = {
   'FastAPI': 'border-emerald-500/30 text-emerald-400',
@@ -22,11 +23,12 @@ const techColors = {
 export default function ProjectCard({ project, index }) {
   return (
     <motion.article
+      layout
       initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.5, delay: index * 0.12 }}
-      className="glass-card group overflow-hidden"
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="glass-card group overflow-hidden flex flex-col"
     >
       {/* Gradient accent bar */}
       <div
@@ -36,7 +38,7 @@ export default function ProjectCard({ project, index }) {
         }}
       />
 
-      <div className="p-6 sm:p-8">
+      <div className="p-6 sm:p-8 flex flex-col flex-1">
         {/* Header row */}
         <div className="flex items-start justify-between mb-4">
           <div>
@@ -57,10 +59,10 @@ export default function ProjectCard({ project, index }) {
           {project.description}
         </p>
 
-        {/* Highlights */}
+        {/* Highlights — 3 bullets */}
         {project.highlights && (
           <ul className="space-y-2 mb-5">
-            {project.highlights.map((h, i) => (
+            {project.highlights.slice(0, 3).map((h, i) => (
               <li
                 key={i}
                 className="flex items-start gap-2 text-xs text-text-muted"
@@ -73,7 +75,7 @@ export default function ProjectCard({ project, index }) {
         )}
 
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-6">
           {project.tech.map((t) => (
             <span
               key={t}
@@ -84,6 +86,28 @@ export default function ProjectCard({ project, index }) {
               {t}
             </span>
           ))}
+        </div>
+
+        {/* Action buttons — pushed to bottom */}
+        <div className="mt-auto flex gap-3">
+          <a
+            href={project.demoUrl || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-btn project-btn-primary"
+          >
+            <HiOutlineExternalLink size={14} />
+            View Demo
+          </a>
+          <a
+            href={project.pptUrl || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-btn project-btn-secondary"
+          >
+            <HiOutlineDocumentText size={14} />
+            View PPT / Research
+          </a>
         </div>
       </div>
     </motion.article>
