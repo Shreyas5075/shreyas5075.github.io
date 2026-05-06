@@ -161,8 +161,6 @@ export default function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6"
         >
           <span className="gradient-text">Shreyas</span>
-          <br />
-          <span className="text-text-primary">Ghag</span>
         </motion.h1>
 
         {/* Animated underline accent */}
